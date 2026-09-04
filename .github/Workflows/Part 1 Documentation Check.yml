@@ -1,0 +1,33 @@
+name: Part 1 Documentation Check
+ 
+on:
+  push:
+  pull_request:
+ 
+jobs:
+  validate-part1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+ 
+      - name: Check docs folder exists
+        run: test -d docs
+ 
+      - name: Check ERD file exists
+        run: test -f docs/FinalERd.png
+ 
+      - name: Check API Endpoint Plan exists
+        run: test -f docs/PROG6212RamsA1.pdf
+ 
+      - name: Check SQL Database Script exists
+        run: test -f docs/SQLQuery1ComradesRaceDayy.sql
+ 
+      - name: Check README exists
+        run: test -f README.md
+ 
+      - name: Confirm SQL script is not empty
+        run: test -s docs/SQLQuery1ComradesRaceDayy.sql
+ 
+      - name: All required Part 1 files present
+        run: echo "Part 1 documentation structure validated successfully."
