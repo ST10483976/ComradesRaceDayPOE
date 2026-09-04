@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
  
       - name: Check docs folder exists
-        run: test github Workflow
+        run: test.github/Workflows
  
       - name: Check ERD file exists
         run: test -f docs/FinalERd.png
